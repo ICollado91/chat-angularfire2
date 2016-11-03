@@ -1,0 +1,68 @@
+.title {
+    color: #fff;
+	text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px cadetblue, 0 0 30px cadetblue, 0 0 40px cadetblue, 0 0 50px cadetblue, 0 0 75px cadetblue;
+	letter-spacing: 5px;
+	font: 80px 'MisoRegular';
+    text-align: center;
+}
+
+.chatrooms {
+    position: relative;
+    display: inline-block;
+    background-image: url(https://lh3.googleusercontent.com/mCVsAtG1EpSwbaGIkSo1v2WFkwKG_khaAz0iP9F3uuDkxzfYarKAfIIJVuq0FfiC7gCLu5cP=s640-h400-e365);
+    background-size: cover;
+    border: ridge 1.5rem darkblue;
+    border-radius: 30px;
+}
+
+button {
+    color: #fff;
+	text-shadow: 0 0 5px red, 0 0 10px red, 0 0 15px red, 0 0 20px grey, 0 0 30px grey, 0 0 40px grey, 0 0 50px grey, 0 0 75px grey;
+	letter-spacing: 5px;
+	font: 20px 'MisoRegular';
+    cursor: pointer;
+}
+
+.text {
+    color: #fff;
+	text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px black, 0 0 30px black, 0 0 40px black, 0 0 50px black, 0 0 75px black;
+	letter-spacing: 5px;
+	font: 20px 'MisoRegular';
+    text-align: left;
+    cursor: pointer;
+}
+
+.text:hover {
+    background-color: burlywood;
+}
+
+.RoomButton {
+    text-align: center;
+    text-shadow: 0 0 5px grey, 0 0 10px grey, 0 0 15px grey, 0 0 20px blue, 0 0 30px blue, 0 0 40px blue, 0 0 50px blue, 0 0 75px blue;
+}
+
+.textbox {
+    height:30px;
+    font-size:14pt;
+}
+
+.custom-counter {
+    margin-left: 0;
+    padding-right: 0;
+    list-style-type: none;
+}
+
+.custom-counter li {
+    counter-increment: step-counter;
+}
+
+.custom-counter li::before {
+    content: counter(step-counter);
+    margin-right: 5px;
+    font-size: 100%;
+    /*background-color: rgb(200,200,200);*/
+    color: white;
+    /*font-weight: bold;*/
+    padding: 3px 8px;
+    border-radius: 3px;
+}

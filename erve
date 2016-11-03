@@ -1,0 +1,30 @@
+[1mdiff --git a/src/app/app.component.html b/src/app/app.component.html[m
+[1mindex 73bdbc3..c5c31ad 100644[m
+[1m--- a/src/app/app.component.html[m
+[1m+++ b/src/app/app.component.html[m
+[36m@@ -1,5 +1,5 @@[m
+ <ul>[m
+[31m-  <li class="text" *ngFor="let room of rooms | async">[m
+[31m-    {{room.$value}}[m
+[32m+[m[32m  <li class="text" *ngFor="let item of items | async">[m
+[32m+[m[32m    {{item.$value}}[m
+   </li>[m
+[31m-</ul>[m
+[32m+[m[32m</ul>[m
+\ No newline at end of file[m
+[1mdiff --git a/src/app/app.component.ts b/src/app/app.component.ts[m
+[1mindex 08a6c06..3b46a25 100644[m
+[1m--- a/src/app/app.component.ts[m
+[1m+++ b/src/app/app.component.ts[m
+[36m@@ -8,8 +8,8 @@[m [mimport { AngularFire, FirebaseListObservable } from 'angularfire2';[m
+   styleUrls: ['app.component.css'][m
+ })[m
+ export class AppComponent {[m
+[31m-  rooms: FirebaseListObservable<any[]>;[m
+[32m+[m[32m  items: FirebaseListObservable<any[]>;[m
+   constructor(af: AngularFire) {[m
+[31m-    this.rooms = af.database.list('/rooms');[m
+[32m+[m[32m    this.items = af.database.list('/items');[m
+   }[m
+ }[m
+\ No newline at end of file[m

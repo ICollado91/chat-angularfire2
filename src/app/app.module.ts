@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
+import { ChatRooms } from './chatrooms.component';
+import { FormsModule } from '@angular/forms';
+import { RouterModule }   from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
 
 // Must export the config
@@ -14,9 +17,13 @@ export const firebaseConfig = {
 @NgModule({
   imports: [
     BrowserModule,
+    FormsModule,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  declarations: [ AppComponent ],
+  declarations: [ 
+      AppComponent,
+      ChatRooms
+    ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}

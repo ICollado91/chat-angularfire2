@@ -1,0 +1,5 @@
+<section class="chatbox" >
+    <div class="text" *ngFor="let message of messages | async">{{message.$value}}</div>
+    <br>Preview Message: {{addthis}}<br>
+    <input class="textbox" type="text" [(ngModel)]="addthis"><br><button (click)="addMessage(addthis); addthis='';" (click)="addMessage(addthis); addthis='';">Send</button><br>
+</section>

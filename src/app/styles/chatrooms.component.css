@@ -1,0 +1,20 @@
+.chatbox {
+    position: absolute;
+    border-style: ridge;
+    border-width: 1.5rem;
+    border-color: darkslategrey;
+    background-image: url(https://www.xmple.com/wallpaper/grey-linear-gradient-black-1920x1080-c2-2f4f4f-000000-a-90-f-14.svg);
+    display: inline-block;
+    border-radius: 30px;
+}
+
+.textbox {
+    display: inline-block;
+}
+
+.text {
+    color: #fff;
+	text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px black, 0 0 30px black, 0 0 40px black, 0 0 50px black, 0 0 75px black;
+	letter-spacing: 5px;
+	font: 20px 'MisoRegular';
+}

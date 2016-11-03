@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+ html {
+     height: 100%; /* makes sure our HTML takes up 100% of the browser window */
+     font-size: 100%;
+ }
+
+body {
+    padding-top: 100px darkblue;
+    background-image: url(http://www.densodynamics.com/wp-content/uploads/2014/10/global-connection2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Open Sans'; 
+    color: white;             
+    min-height: 100%;         
+ }
+
+ .bar {
+     position: relative;
+     padding: 0.5rem;
+     /* #1 */
+     background-color: rgba(25,25,112,0.5);
+     /* #2 */
+     z-index: 1;
+ }
