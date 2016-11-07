@@ -1,5 +1,17 @@
-<section class="chatbox" >
-    <div class="text" *ngFor="let message of messages | async">{{message.$value}}</div>
-    <br>Preview Message: {{addthis}}<br>
-    <input class="textbox" type="text" [(ngModel)]="addthis"><br><button (click)="addMessage(addthis); addthis='';" (click)="addMessage(addthis); addthis='';">Send</button><br>
+<section>
+	<input type="text" [(ngModel)]="roomName"><button (click)="createRoom(roomName)">Create Room</button>
+	<ul>
+		<li *ngFor="let room of rooms | async">
+			<span (click)="readRoom(room.name)">{{room.name}}</span>
+		</li>
+	</ul>
+</section>
+<section  *ngIf="currentRoom">
+	Current Chatroom: {{currentRoom}}
+		<ul><span  *ngFor="let message of messages | async">
+			<li *ngIf="roomBoolean(message.chatroom)">
+				{{message.message}}
+			</li></span>
+		</ul>
+		<input type="text" [(ngModel)]="newMessage"><button (click)="createMessage(newMessage)">Send</button>
 </section>

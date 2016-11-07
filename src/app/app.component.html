@@ -1,12 +1,3 @@
-<h1 class="title">Bloc Chat</h1>
-<section class="chatrooms">
-    <input class="textbox" type="text" maxlength="15" [(ngModel)]="roomName">
-    <button class="RoomButton"(click)="addRoom(roomName); roomName=''; ">Create New Room</button><br>
-    <ol class="custom-counter">
-        <li class="text" *ngFor="let room of rooms | async">
-            {{room.name}}
-            <button (click)="deleteRoom(room.$key)">Delete Room</button>
-        </li>
-    </ol>
-</section>
+<h1>Bloc Chat</h1>
 <chat-room>Loading...</chat-room>
+<messages>Loading...</messages>
