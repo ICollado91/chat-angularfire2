@@ -1,17 +1,34 @@
 <section>
-	<input type="text" [(ngModel)]="roomName"><button (click)="createRoom(roomName)">Create Room</button>
-	<ul>
-		<li *ngFor="let room of rooms | async">
-			<span (click)="readRoom(room.name)">{{room.name}}</span>
-		</li>
-	</ul>
+	<form (ngSubmit)="login()" #loginForm="ngForm">
+    	<input type="email" name="newUser" placeholder="Email" required>
+    	<button type="submit">Login</button>
+    	<button md-raised-button (click)="logout()">Logout</button>
+	</form>
 </section>
-<section  *ngIf="currentRoom">
-	Current Chatroom: {{currentRoom}}
-		<ul><span  *ngFor="let message of messages | async">
-			<li *ngIf="roomBoolean(message.chatroom)">
-				{{message.message}}
-			</li></span>
-		</ul>
-		<input type="text" [(ngModel)]="newMessage"><button (click)="createMessage(newMessage)">Send</button>
+
+
+
+<section *ngIf="loggedIn">
+	<h1>Chatrooms</h1>
+	<ul>
+        <li *ngFor="let room of rooms | async">
+        	<span (click)="readRoom(room.name)">{{room.name}}</span>
+        </li>
+    </ul>
+    <form (ngSubmit)="createRoom(roomName)" #roomForm="ngForm">
+        <input type="text" [(ngModel)]="roomName" name="roomName" placeholder="New chatroom" required>
+        <button type="submit">Create Room</button>
+    </form>
+</section>
+<section *ngIf="currentRoom && loggedIn">
+	<h1>Current Chatroom: {{currentRoom}}</h1>
+	<ul>
+		<span *ngFor="let message of messages | async">
+			<li *ngIf="roomBoolean(message.chatroom)">{{message.createdBy}}: {{message.message}}</li>
+		</span>
+	</ul>
+	<form (ngSubmit)="createMessage(newMessage)" #messageForm="ngForm">
+        <input type="text" [(ngModel)]="newMessage" name="newMessage" placeholder="New message" required>
+        <button type="submit">Send</button>
+    </form>
 </section>
